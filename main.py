@@ -1,11 +1,10 @@
 from fastapi import FastAPI
+from app.api.api import api_router
 
-app = FastAPI()
+app = FastAPI(
+    title="Sistema de Reservas de Salas",
+    description="Servicio web para registrar y consultar reservas de salas académicas.",
+    version="1.0.0"
+)
 
-@app.get("/")
-def inicio():
-    return {"mensaje": "Bienvenido a mi primera API"}
-
-@app.get("/saludo/{nombre}")
-def saludo(nombre: str):
-    return {"mensaje": f"Hola {nombre}, bienvenido!"}
+app.include_router(api_router)
