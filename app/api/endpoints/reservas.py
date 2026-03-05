@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from typing import List, Dict
-from app.schemas.reserva import Reserva, ReservaCreate
+from app.schemas.reservas import Reserva, ReservaCreate
 from app.db.store import reservas_db
 import app.db.store as store
 
